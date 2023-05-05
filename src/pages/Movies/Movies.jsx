@@ -27,8 +27,9 @@ const Movies = () => {
   const onMovieSearch = search => {
     setSearch(search);
     setMovies([]);
-    navigate(`?query=${search}`);
-  };
+    const queryParams = new URLSearchParams({ query: search });
+    navigate({ search: queryParams.toString() });
+    };
 
   return (
     <main>
